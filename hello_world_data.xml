@@ -1,0 +1,27 @@
+<openerp>
+    <data>
+
+    <record forcecreate="1" id="helloworld_seq_type" model="ir.sequence.type">
+        <field name="name">Hello World Test Seq Type</field>
+        <field name="code">helloworld</field>
+    </record>
+
+    <record forcecreate="1" id="helloworld_seq" model="ir.sequence">
+        <field name="name">Hello World Test Seq</field>
+        <field name="code">helloworld</field>
+        <!--        <field name=”padding” eval=”pading”/>
+        <field name=”prefix”>prefix</field>
+        <field name=”suffix”>suffix</field>-->
+    </record>
+     <record forcecreate="True" id="cron_helloworld" model="ir.cron">
+        <field name="name">Hello World Scheduler</field>
+        <field name="interval_number">5</field>
+        <field name="interval_type">minutes</field>
+        <field name="numbercall">-1</field>
+        <field name="model">helloworld.test</field>
+        <field name="function">cron_create</field>
+    </record>
+
+
+</data>
+</openerp>

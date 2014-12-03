@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+            <record model="ir.ui.view" id="view_helloworld_test_search">
+                <field name="name">Hello World Test Search View</field>
+                <field name="model">helloworld.test</field>
+                <field name="arch" type="xml">
+                    <search string="Hello World Test Search">
+                       <field name="name" />
+                    </search>
+                </field>
+            </record>
+
+            <record model="ir.ui.view" id="view_helloworld_test_tree">
+                <field name="name">Hello World Test Tree View</field>
+                <field name="model">helloworld.test</field>
+                <field name="arch" type="xml">
+                    <tree string="Hello World Test Tree View">
+                       <field name="name" />
+                       <field name="value" />
+                    </tree>
+                </field>
+            </record>    
+
+            <record model="ir.ui.view" id="view_helloworld_test_form">
+                <field name="name">Helloworld Test Form View</field>
+                <field name="model">helloworld.test</field>
+                <field name="arch" type="xml">
+                    <form string="Hello World Test Form View">
+                       <field name="name" />
+                       <field name="value" />
+                    </form>
+                </field>
+            </record>
+
+            <record model="ir.actions.act_window" id="action_helloworld_test" >
+                <field name="name">Helloworld Test Window Action</field>
+                <field name="res_model">helloworld.test</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">tree,form</field>
+                <field name="search_view_id" ref="view_helloworld_test_search"/>
+            </record>
+
+
+          <record model="ir.ui.view" id="view_helloworld_test2_search">
+                <field name="name">Hello World Test2 Search View</field>
+                <field name="model">helloworld.test2</field>
+                <field name="arch" type="xml">
+                    <search string="Hello World Test2 Search">
+                       <field name="name" />
+                    </search>
+                </field>
+            </record>
+
+            <record model="ir.ui.view" id="view_helloworld_test2_tree">
+                <field name="name">Hello World Test2 Tree View</field>
+                <field name="model">helloworld.test2</field>
+                <field name="arch" type="xml">
+                    <tree string="Hello World Test2 Tree View">
+                       <field name="name" />
+                       <field name="helloworld_test_id" />
+                    </tree>
+                </field>
+            </record>    
+
+            <record model="ir.ui.view" id="view_helloworld_test2_form">
+                <field name="name">Helloworld Test2 Form View</field>
+                <field name="model">helloworld.test2</field>
+                <field name="arch" type="xml">
+                    <form string="Hello World Test2 Form View">
+                       <field name="name" />
+                       <field name="helloworld_test_id" />
+                    </form>
+                </field>
+            </record>
+
+            <record model="ir.actions.act_window" id="action_helloworld_test2" >
+                <field name="name">Helloworld Test2 Window Action</field>
+                <field name="res_model">helloworld.test2</field>
+                <field name="view_type">form</field>
+                <field name="view_mode">tree,form</field>
+                <field name="search_view_id" ref="view_helloworld_test2_search"/>
+            </record>
+           <menuitem name="Hello World" id="menu_top_helloworld"/>
+           <menuitem name="Hello World" id="menu_left_helloworld" parent="menu_top_helloworld"/>
+           <menuitem name="Test" id="menu_sub_helloworld_test" parent="menu_left_helloworld" action="action_helloworld_test"/>
+           <menuitem name="Test2" id="menu_sub_helloworld_test2" parent="menu_left_helloworld" action="action_helloworld_test2"/>
+
+
+
+    </data>
+</openerp>
